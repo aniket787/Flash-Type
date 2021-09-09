@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/aniket787/Flash-Type.git/static/css/main.1726f54d.chunk.css",
+    "main.js": "/aniket787/Flash-Type.git/static/js/main.ab06c0d6.chunk.js",
+    "main.js.map": "/aniket787/Flash-Type.git/static/js/main.ab06c0d6.chunk.js.map",
+    "runtime-main.js": "/aniket787/Flash-Type.git/static/js/runtime-main.66eeecf8.js",
+    "runtime-main.js.map": "/aniket787/Flash-Type.git/static/js/runtime-main.66eeecf8.js.map",
+    "static/js/2.f8c9fd46.chunk.js": "/aniket787/Flash-Type.git/static/js/2.f8c9fd46.chunk.js",
+    "static/js/2.f8c9fd46.chunk.js.map": "/aniket787/Flash-Type.git/static/js/2.f8c9fd46.chunk.js.map",
+    "index.html": "/aniket787/Flash-Type.git/index.html",
+    "static/css/main.1726f54d.chunk.css.map": "/aniket787/Flash-Type.git/static/css/main.1726f54d.chunk.css.map",
+    "static/js/2.f8c9fd46.chunk.js.LICENSE.txt": "/aniket787/Flash-Type.git/static/js/2.f8c9fd46.chunk.js.LICENSE.txt",
+    "static/media/flash.96e141d3.png": "/aniket787/Flash-Type.git/static/media/flash.96e141d3.png",
+    "static/media/logo.904ac8fd.png": "/aniket787/Flash-Type.git/static/media/logo.904ac8fd.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.66eeecf8.js",
+    "static/js/2.f8c9fd46.chunk.js",
+    "static/css/main.1726f54d.chunk.css",
+    "static/js/main.ab06c0d6.chunk.js"
+  ]
+}
