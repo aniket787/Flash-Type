@@ -8,4 +8,5 @@ body{
     display: flex;
     flex-direction: column;
     background-color: #262a2b;
+    max-width: 2000%
 }

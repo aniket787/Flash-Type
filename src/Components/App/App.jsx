@@ -5,9 +5,11 @@ import Landing from '../Landing/Landing';
 import Nav from '../Nav/Nav';
 import "./App.css";
 import { SAMPLE_PARAGRAPHS } from '../../Data/SampleParagraph';
+import TypingChallenge from '../TypingChallenge/TypingChallenge';
+
 
 const TotalTime = 60;
-const ServiceUrl ="http://metaphorpsum.com/paragraphs/1/9";
+const ServiceUrl = "http://metaphorpsum.com/paragraphs/1/9";
 const DefaultState = {
     selectedParagraph: '',
     timerStarted: false,
@@ -16,87 +18,92 @@ const DefaultState = {
     characters: 0,
     wpm: 0,
     testInfo: [],
+    inputTime: "",
 };
 
 class App extends React.Component {
 
 
-    state = DefaultState;
+    state = {
+        ...DefaultState,
+        inputTime:'' // <-- Add this line
+    };
 
-fetchNewParagraphFallBack =()=> {
-    const data = SAMPLE_PARAGRAPHS[
-        Math.floor(Math.random()* SAMPLE_PARAGRAPHS.length)
-    ];
-    const selectedParagraphArray = data.split("");
-    const testInfo = selectedParagraphArray.map(selectedLetter => {
-        return {
-            testLetter: selectedLetter,
-            status: "notAttempted",
-        }
-    })
-    this.setState({ ...DefaultState, testInfo, selectedParagraph: data })
+    // Handler to receive inputTime from TypingChallenge
+    handleInputTimeChange = (time) => {
+        this.setState({ inputTime: time });
+    };
 
-
-}
-
-
-fetchNewParagraph =() =>{
-    fetch(ServiceUrl)
-        .then(response => response.text())
-        .then(data => {
-            this.setState({ selectedParagraph: data })
-          
+    fetchNewParagraphFallBack = () => {
+        const data = SAMPLE_PARAGRAPHS[
+            Math.floor(Math.random() * SAMPLE_PARAGRAPHS.length)
+        ];
+        const selectedParagraphArray = data.split("");
+        const testInfo = selectedParagraphArray.map(selectedLetter => {
+            return {
+                testLetter: selectedLetter,
+                status: "notAttempted",
+            }
         })
-
-
-}
-
-
-    componentDidMount () {
-        this.fetchNewParagraphFallBack();
+        this.setState({ ...DefaultState, testInfo, selectedParagraph: data })
 
 
     }
 
 
-    startTimer = () =>{
-        this.setState({timerStarted: true});
-        const timer = setInterval(()=>{
-            if(this.state.timerRemaining>0){
+    fetchNewParagraph = () => {
+        fetch(ServiceUrl)
+            .then(response => response.text())
+            .then(data => {
+                this.setState({ selectedParagraph: data })
+
+            })
+    }
+
+
+    componentDidMount() {
+        this.fetchNewParagraphFallBack();
+    }
+
+
+    startTimer = () => {
+        this.setState({ timerStarted: true });
+        const timer = setInterval(() => {
+            if (this.state.timerRemaining > 0) {
                 // change the wpm as well
                 const timeSpent = TotalTime - this.state.timerRemaining;
-                const wpm = timeSpent > 0 
-                ?(this.state.words / timeSpent) * TotalTime 
-                : 0;
+                const wpm = timeSpent > 0
+                    ? (this.state.words / timeSpent) * TotalTime
+                    : 0;
                 this.setState({
                     timerRemaining: this.state.timerRemaining - 1,
                     wpm: parseInt(wpm),
                 });
 
-            }else{
+            } else {
                 clearInterval(timer)
             }
-           
+
 
         }, 1000);
     }
 
 
     startAgain = () => this.fetchNewParagraphFallBack();
-    handleUserInput = (inputValue) =>{
-       if(!this.state.timerStarted) this.startTimer();
+    handleUserInput = (inputValue) => {
+        if (!this.state.timerStarted) this.startTimer();
 
 
-    //     handle under flow test - all characters chould be shown unattempted
+        //     handle under flow test - all characters chould be shown unattempted
 
 
-    //  handle overflow case-  early exit 
-    
-    
-    //  handle backspace - mark the index +1 element as not attempted
+        //  handle overflow case-  early exit 
 
-    // update - update the status in test info     find last charv in inputvalue and its index
-            //  - check if character at same index as stateinfo matches or not 
+
+        //  handle backspace - mark the index +1 element as not attempted
+
+        // update - update the status in test info     find last charv in inputvalue and its index
+        //  - check if character at same index as stateinfo matches or not 
 
         const characters = inputValue.length;
         const words = inputValue.split(" ").length;
@@ -153,6 +160,8 @@ fetchNewParagraph =() =>{
                 {/* Landing page */}
                 <Landing />
 
+                
+
                 {/* challenge section */}
                 <ChallengeSection
                     selectedParagraph={this.state.selectedParagraph}
@@ -164,9 +173,13 @@ fetchNewParagraph =() =>{
                     testInfo={this.state.testInfo}
                     onInputChange={this.handleUserInput}
                     startAgain={this.startAgain}
-                     />
-                    
-                    
+                />
+                {/* <TypingChallenge
+                    testInfo={this.state.testInfo}
+                    onInputChange={this.handleUserInput}
+                 onInputTimeChange={this.handleInputTimeChange}
+                 /> */}
+
 
                 {/* footer */}
                 <Footer />

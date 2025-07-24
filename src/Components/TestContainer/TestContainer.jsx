@@ -24,15 +24,13 @@ const TestContainer = ({
                         timerRemaining={timerRemaining}
                             timerStared={timerStared}
                             wpm={wpm}
-                            characters={characters}
+                               characters={characters}
                             words={words}
                             selectedParagraph={selectedParagraph}
                             testInfo={testInfo}
                             onInputChange={onInputChange}
                              />
                         
-                        
-
         </div>
             ): (
                         <div className="try-again-container">
