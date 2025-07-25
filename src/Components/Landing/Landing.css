@@ -3,7 +3,7 @@
     min-height: 90vh;
     justify-content: space-between;
     align-items: center;
-    color: #eee2ee;
+    color: #040104;
     padding: 0 32px;
     font-family: "Bangers",cursive;
     margin:0;
@@ -27,7 +27,7 @@
 }
 
 .flash-image{
-    width: 40vw;
+    width: 50vw;
 }
 
 @media (max-width: 800px){

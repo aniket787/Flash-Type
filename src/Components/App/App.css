@@ -7,6 +7,6 @@ body{
 .app{
     display: flex;
     flex-direction: column;
-    background-color: #262a2b;
+    background-color: #fefefe;
     max-width: 2000%
 }

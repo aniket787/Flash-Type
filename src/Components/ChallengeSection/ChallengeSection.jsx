@@ -51,6 +51,7 @@ const ChallengeSection = ({
                     testInfo={testInfo}
                     onInputChange={onInputChange}
                     startAgain={startAgain}
+                    inputTime={inputTime}
                 />
             )}
         </div>
