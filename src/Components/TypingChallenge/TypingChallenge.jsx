@@ -41,16 +41,29 @@ const TypingChallenge = ({
     return (
         <div className="typing-challenge">
             <div className="timer-input-section">
-                <h6>Please Enter Time</h6>
+
+                {!timerStarted && (
+                    <p>
+                        <h6>You are all set..!   Please Confirm Time Again</h6>
+                    </p>
+                )}
+
 
                 {!timerStarted && (
                     <div className="timer-input-row">
-                        <input
+                        <input className="input-class"
                             type="number"
                             value={inputTime}
                             onChange={handleTimeInput}
                             placeholder="Enter Time In seconds"
                         />
+
+                        {!timerStarted && (
+                            <p className="timer-info">
+                                Click "Start Test" to begin typing
+                            </p>
+                        )}
+
                         <button className="start-button" onClick={handleStartTest}>Start Test</button>
                     </div>
                 )}
@@ -61,11 +74,7 @@ const TypingChallenge = ({
                     </p>
                 )}
 
-                {!timerStarted && (
-                    <p className="timer-info">
-                        Click "Start Test" to begin typing
-                    </p>
-                )}
+
             </div>
 
             <div className="textarea-container">

@@ -2,7 +2,7 @@ import React from 'react'
 import './Landing.css'
 import Typewriter from 'typewriter-effect';
 
-import flash2 from './../../assets/flash2.png'
+import flash2 from './../../assets/flash2.jpg'
 
 
 const Landing =() => {

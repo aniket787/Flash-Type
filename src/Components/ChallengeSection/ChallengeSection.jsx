@@ -20,18 +20,18 @@ const ChallengeSection = ({
     return (
         <div className="challenge-section-container">
             <h1 data-aos="fade-down" className="challenge-section-header">
-                Take a speed test now !
+                Take a speed test now ! ⏰
             </h1>
 
             {/* Input Time Section */}
             {showTimerInput && (
                 <div className="timer-input-section">
-                    <h2>Enter Time (in seconds)</h2>
-                    <input
-                        type="number"
+                    <h2>Enter your desired Time for test</h2>
+                    <input className='input-class'
+                        // type="number"
                         value={inputTime}
                         onChange={handleTimeInput}
-                        placeholder="Enter time"
+                        placeholder="Enter time in seconds"
                     />
                     <button className="start-button" onClick={handleStartTest}>
                         Start Test

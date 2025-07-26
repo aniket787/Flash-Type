@@ -37,6 +37,8 @@
 
 }
 
+
+
 .start-again-btn{
     background-color: #3e4248;
 }
@@ -44,9 +46,13 @@
 .start-again-btn:focus{
     background: #808080;
 }
+.leetcode-button{
+    /* color: #1da1f2; */
+    background: #3e4248;
+}
 
 .share-btn{
-    background: #3b5998;
+    background: #cf1e1e;
 }
 .share-btn:hover,
 .share-btn:focus{

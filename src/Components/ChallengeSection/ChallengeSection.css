@@ -7,8 +7,25 @@
 }
 .challenge-section-header{
 text-align: center;
-color: #4e56ec;
+color: #297cf0;
 font-family: "Bangers", cursive;
 font-size: 64px;
 letter-spacing: 4px;
+}
+
+.start-button{
+    color: rgba(255, 255, 253, 0.845);
+    background-color: rgb(77, 76, 76);
+}
+
+.start-button:hover{
+    color: rgb(77, 76, 76);
+    background-color: rgba(134, 231, 114, 0.845);
+}
+
+.input-class{
+    text-align: center;
+    height: 30px;
+    background-color: #ffffff;
+    color: rgb(0, 0, 0);
 }

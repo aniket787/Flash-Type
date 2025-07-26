@@ -6,6 +6,10 @@
     justify-content: center;
 }
 
+.timer-input-section{
+    margin: 0px;
+}
+
 .timer-container{
     margin: 16px;
 }
@@ -38,7 +42,7 @@
     display: flex;
     width: 50%;
     flex-grow: 1;
-
+    border: #c6463a;
 }
 
 .test-paragraph{
@@ -58,6 +62,7 @@
   overflow: scroll;
   transition: all 0.2s;
   scrollbar-width: none;
+  border: #c6463a;
 }
 .textarea::-webkit-scrollbar{
     display: none;
@@ -97,11 +102,11 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top: 20px;
+    /* margin-top: 1px; */
 }
 
 .timer-heading {
-    margin-bottom: 10px;
+    margin-bottom: 1px;
     font-size: 20px;
     color: #333;
     font-weight: 600;
@@ -113,12 +118,12 @@
     justify-content: center;
     align-items: center;
     gap: 10px;
-    margin-top: 10px;
+    margin-top: 5px;
     flex-wrap: wrap;
 }
 
 .timer-input {
-    padding: 12px 16px;
+    padding: 12 15px;
     font-size: 16px;
     border: 2px solid #3498db;
     border-radius: 8px;
@@ -134,7 +139,7 @@
     box-shadow: 0 0 8px rgba(52, 152, 219, 0.5);
 }
 
-.start-button {
+/* .start-button {
     padding: 12px 20px;
     font-size: 16px;
     font-weight: 600;
@@ -150,8 +155,25 @@
 .start-button:hover {
     background-color: #2980b9;
     transform: scale(1.03);
+} */
+
+.start-button{
+    color: rgba(255, 255, 253, 0.845);
+    background-color: rgb(77, 76, 76);
+}
+
+.start-button:hover{
+    color: rgb(77, 76, 76);
+    background-color: rgba(134, 231, 114, 0.845);
 }
 
 .start-button:active {
     transform: scale(0.98);
+}
+
+.input-class{
+    text-align: center;
+    height: 30px;
+    background-color: #ffffff;
+    color: rgb(0, 0, 0);
 }

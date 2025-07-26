@@ -3,22 +3,43 @@ import './TryAgain.css'
 const TryAgain = ({ words, characters, wpm, startAgain}) =>{
     return(
         <div className="try-again-container">
-            <h1>Test Results</h1>
+            <h1 className='result-heading'>Test Results</h1>
 
             <div className="result-container">
                 <p>
-                    <b>characters:</b> {characters}
+                    <b>Characters you typed:</b> {characters}
                 </p>
                 <p>
-                    <b>words:</b> {words}
+                    <b>Words you typed:</b> {words}
                 </p>
                 <p>
-                    <b>speed:</b> {wpm} wpm
+                    <b>your Speed Was:</b> {wpm} wpm
                 </p>
             </div>
-            
+
             <div>
-                <button onClick={()=> startAgain()} className="end-buttons start-again-btn">Re-try</button>
+                <button onClick={() => startAgain()} className="end-buttons start-again-btn">Re-try Test Again</button>
+            </div>
+
+            <div>
+                <h1 className='heading'>Thanks for taking this test</h1>
+            </div>
+
+            <h2>You can find me here 🙂 </h2>
+
+            <div>
+
+
+
+                <button
+                    onClick={() => {
+                        window.open("https://leetcode.com/u/aniketgaikwad33/ ")
+                    }}
+                    className="end-buttons leetcode-button"
+                >
+                    LeetCode
+                </button>
+
                 <button 
                 onClick={()=> {
                         window.open("https://www.linkedin.com/in/aniket-gaikwad-7379111a9/ width=800,height=600")
